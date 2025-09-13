@@ -1,0 +1,1 @@
+Este es el backend del sistema de gestión de tiendas.

@@ -7,7 +7,7 @@ let onUnauthorized = null;
 export const setUnauthorizedHandler = (fn) => { onUnauthorized = fn; };
 
 const instance = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: import.meta.env.VITE_API_URL || "/",  // ✅ usa la env
 });
 
 instance.interceptors.request.use((config) => {

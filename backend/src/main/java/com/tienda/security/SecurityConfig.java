@@ -38,7 +38,7 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.OPTIONS, "/*").permitAll()  // ← permite preflight
-                .requestMatchers("/","/index.html","/src/**","/assets/**","/*.ico","/*.png","/*.jpg").permitAll()
+                .requestMatchers("/","/index.html","/src/**","/assets/**","/*.ico","/*.png","/*.jpg","/*.svg").permitAll()
                 .requestMatchers("/auth/*","/error","usuarios/resetear-password").permitAll() // <-- Permitir login y registro sin autenticación
                 .requestMatchers("/usuarios/estado","/cajas/*").hasRole("ADMIN")
                 .requestMatchers("/movimientos/*","/tiendas/*").hasAnyRole("ADMIN", "USER")
